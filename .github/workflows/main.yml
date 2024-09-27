@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t fishflete/archives:latest/your-app:latest .
+          docker build -t fishflete/archives:latest .
 
       - name: Push Docker image to DockerHub
         run: |
