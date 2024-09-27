@@ -5,14 +5,15 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # Copy package.json and install dependencies
+# If you don't have a package.json yet, you can skip this step
 COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the application code
 COPY . .
 
-# Expose the port on which the app will run
+# Expose the port that your app runs on
 EXPOSE 3000
 
-# Run the app
-CMD ["npm", "start"]
+# Command to run the app
+CMD ["npx", "http-server", "-p", "3000"]
